@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload your files</title>
+  <link rel="shortcut icon" type="image/png" href="/images/drivebeta.png"/>
+  <meta name="theme-color" content="#ffffff"><!--"#DE1AFB">-->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" id="stylesheet" href="/css/Stylesheet.css">
+  <script src="/js/ajaxScript.js"></script>
+  <script src="/js/resizeScript.js"></script>
+</head>
+<body>
+    <div class="header">
+	    <a href="https://drive.google.com" target="_blank">
+		    <img src="/images/drivebeta.png" style="height: 60%;display: inlin;padding: 2vh;">
+	    </a>
+	<!--<div class="text">~Drive~</div>-->
+    </div>
+    <div class="box1">
+     <form enctype="multipart/form-data" action="/upload" method="POST">
+       <label class="button" style="float: left;border-radius: 10px">
+        <input type="file" name="uploaded_file"/>
+        <i class="fa fa-cloud-upload"></i> Choose file
+       </label>
+     <input type="submit" class="button right" value="Upload" style="border-radius: 10px"></input>
+     </form>
+    </div>
+  <div class='div-table' id='fileList'>
+        
+    </div>
+</body>
+</html>

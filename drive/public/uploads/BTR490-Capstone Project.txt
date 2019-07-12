@@ -1,0 +1,16 @@
+URL - http://marceljar.ca/courses/btr490/presentations/introduction/presentation/#/
+
+-> Choose group (May 8)
+-> Choose Project
+-> Do Agile(not necessarily BTR490)
+-> git/Github (Version control, issue tracking)
+-> Grading
+   -> 30% Attendance (Marks are for interaction)
+   -> etc.
+
+
+!Homework!
+
+1. Form groups
+2. Create/Share Github accounts
+3. Send group names + github accounts

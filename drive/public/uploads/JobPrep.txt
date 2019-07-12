@@ -1,0 +1,25 @@
+The opening is for a Research Assistant to work with Ample Organics and their 
+seed-to-sale software product which tracks cannabis production through the growth 
+cycle and supply chain. During this project, the processes, data collection, and 
+data management will be collected, processed, analyzed, visualized, and 
+recommendations prepared. The results of this project will enable Ample Organics to 
+offer an advanced analytics product supporting a licenced producer’s quality control 
+and reporting capabilities.
+ 
+Job duties
+ - Collect data and observe data capture process at select licensed producers
+ - Create Data Flow Diagrams, Class Diagrams and Sequence Diagrams to depict 
+   correct processes
+ - Conduct database design and analysis including ERD models
+ - Work with vendor to understand and document product architecture and key interfaces
+ - Create and present reports, presentations of results as necessary
+ - Interact professionally with industry partners.
+ 
+Job Function:	
+ - [ ] Mongo DB
+ - [✓] JSON
+ - [ ] Javascripot
+ - [ ] Node js
+ - [ ] Visual Paradigm, Visio or other UML tooling
+ - [✓] Must have excellent oral and written communication abilities
+ - [✓] Must have well-demonstrated time-management skills

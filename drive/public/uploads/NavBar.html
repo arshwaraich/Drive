@@ -1,0 +1,54 @@
+<html><head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><script>window.onload = function() {document.getElementById("buttSave").onclick = function() {
+    var kek = document.getElementById("curtain").style;
+	console.log("clicked");
+	if(kek.left == "-25%") kek.left = "0%";
+    else kek.left = "-25%";
+}}</script>
+    
+    <style>.NavLink{
+	text-decoration: none;
+    width: 100%;
+    display: block;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: medium;
+    color: grey;
+    background-color: #f0f0f0;
+    font-family: Arial;
+    }</style>
+</head><body style="
+    margin: 0px;
+    background: linear-gradient(90deg, #ffffff 28px, transparent 1%) center,                  linear-gradient(#ffffff 28px, transparent 1%) center, #000000;
+    background-size: 30px 30px;
+    height: 100%;
+    width: 100%;
+">
+    <div id="curtain" style="height: 100%; width: 20%; background-color: white; left: -25%; transition: all 1s ease 0s; bottom: 0px; top: 0px; position: fixed; box-shadow: darkgrey 0px 0px 12px 0px;">
+    <nav style="
+">
+    <h1 style="
+    text-align: center;
+    font-family: sans-serif;
+    color: grey;
+">SideNav</h1>
+  		<a class="NavLink" href="https://arshwaraich.com/" target="_blank">Home</a>
+        <a class="NavLink" href="https://arshwaraich.com/About" target="_blank">About</a>
+        <a class="NavLink" href="https://arshwaraich.com/Resume" target="_blank">Resume</a>
+        
+	</nav>
+</div><button id="buttSave" style="
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border: none;
+    font-size: 40px;
+    margin: 10px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #797979;
+    color: #ffffff;
+    transition: 0.5s;
+"><i class="fas fa-ellipsis-h"></i></button>
+</body></html>

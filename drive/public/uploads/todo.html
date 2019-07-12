@@ -1,0 +1,92 @@
+<html class="gr__drive_arshwaraich_com"><head>
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=1000px, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://arshwaraich.com/dataFiles/dot.png">
+    <title>To-Do</title>
+    <script>
+    function deHighLight() {
+	var row = document.getElementsByClassName("row");
+        for(var i = 0; i < row.length; ++i){
+            if(row[i].style.color == "rgb(255, 255, 255)"){
+                row[i].childNodes[0].style.color = row[i].style.backgroundColor;
+                row[i].removeAttribute("style");
+            }
+        }
+    }
+
+    function highLight(i) {
+        deHighLight();
+	var row = document.getElementsByClassName("row")[i];
+	row.style.backgroundColor = row.childNodes[0].style.color;
+	row.style.color = "#ffffff";
+	row.childNodes[0].style.color = "#ffffff";
+    };
+    function findMin() {
+	function dueDate(i) {
+    	    return document.getElementsByClassName("row")[i].childNodes[1].childNodes[0].childNodes[0].textContent;
+	}
+        var min = 0;
+	for(var i = 0; i < 5; ++i) {
+    	    if(dueDate(i) < dueDate(min))
+			min = i;
+        }
+	return min;
+    }
+
+    window.onload = function() {
+        highLight(findMin());
+        var bd = document.getElementsByTagName("body")[0];
+        bd.onclick = function() { bd.contentEditable = "true"; };
+        document.onkeydown = function(event){
+            if(event.keyCode == 9){
+                event.preventDefault();
+                document.execCommand('indent', false);
+            }
+            else if(event.keyCode == 75){
+                if(event.ctrlKey){
+                    if(event.shiftKey){
+                        document.execCommand('strikeThrough', false);
+                    }
+                }
+            }
+        }
+        setInterval(function(){ 
+            var txtAreaValue = document.documentElement.outerHTML;
+            var blob = new Blob([txtAreaValue], {type : 'text/plain'});
+            var form = new FormData();
+            form.append("uploaded_file", blob, document.location.href.split("/")[document.location.href.split("/").length - 1]);
+            var req = new XMLHttpRequest();
+            req.open("POST", 'https://drive.arshwaraich.com/upload', true);
+            req.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    //console.log('done');
+               }
+            }
+            req.send(form);
+        } , 5000);
+    }
+</script>
+    
+    <style>
+    .row {
+        width:calc(20vw - 40px);
+        height:calc(100% - 40px);
+        float: left;
+        padding: 20px;
+    }
+    .row:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    ::selection {
+		background-color: #434343;
+		color: #ffffff;
+	}</style>
+</head>
+<body style="margin: 0px; font-family: sans-serif; color: rgb(67, 67, 67); overflow-y: hidden; height: 100%;" contenteditable="true" id="body_container" data-gr-c-s-loaded="true" data-gramm_id="f7424ebe-cabb-08d2-43d7-784163ec648c" data-gramm="true" spellcheck="false" data-gramm_editor="true"><div class="gr-top-z-index gr-top-zero" tabindex="-1"><div class="_30JeG _2_2SE" style="transform: translate(1469.4px, 689.2px);"><div class="_2A3ER"><div class="_1y1wn _2R8DE undefined"></div><div class="_24Em3"><div style="display: initial;"><div class="_21QaI _1L80j" tabindex="-1"></div></div></div><div class="_2-7o4"></div><div class="_24Em3"><div style="display: initial;"><div class="_21QaI _1pbTT" data-action="editor" tabindex="-1"></div></div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"><div class="_30JeG _2_2SE" style="transform: translate(1534.4px, 704.2px);"><div class="_2A3ER"><div class="_1y1wn _2R8DE undefined"></div><div class="_24Em3"><div style="display: initial;"><div class="_21QaI _1L80j" tabindex="-1"></div></div></div><div class="_2-7o4"></div><div class="_24Em3"><div style="display: initial;"><div class="_21QaI _1pbTT" data-action="editor" tabindex="-1"></div></div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div>
+    <div class="row"><h1 style="color: rgb(244, 81, 30);">Business Writing</h1><ul><li><b>Apr 10</b>&nbsp;Notes</li><li><b>Apr 12</b>&nbsp;Final Exam</li></ul></div>
+    <div class="row"><h1 style="color: rgb(51, 182, 121);">Data Comm.</h1><ul><li><b>Mar 28</b>&nbsp;Term Project</li></ul></div>
+    <div class="row" style="background-color: rgb(3, 155, 229); color: rgb(255, 255, 255);"><h1 style="color: rgb(255, 255, 255);">Java</h1><ul><li><b>Apr 03</b>&nbsp;Assignment 2</li><li><b>Apr 10</b>&nbsp;Project</li></ul></div>
+    <div class="row"><h1 style="color: rgb(63, 81, 181);">UML</h1><ul><li><b>Mar 31</b>&nbsp;Assignment 2</li><li><b>Apr 03</b>&nbsp;Test 2</li></ul></div>
+    <div class="row"><h1 style="color: rgb(11, 128, 67);">Web</h1><ul><li><b>Mar 31</b>&nbsp;Assignment 2</li><li><b>Apr 01</b>&nbsp;Test 3</li><li><b>Apr 8</b>&nbsp;Assign 3</li></ul></div>
+
+<div id="hili-wrapper"><div id="hili-popover-inner"><div id="hili-popover-hili"><img id="hilimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/white.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/white-highres.png 2x"></div><div id="hili-popover-twitter"><img id="twimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/twitter.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/twitter-highres.png 2x"></div><div id="hili-popover-em"><img id="emimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/envelope.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/envelope-highres.png 2x"></div></div></div><div id="un-hili-wrapper"><div id="un-hili-popover-inner"><div id="un-hili-popover-hili"><img id="unhilimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/yellow.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/yellow-highres.png 2x"></div><div id="un-hili-popover-twitter"><img id="untwimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/twitter.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/twitter-highres.png 2x"></div><div id="un-hili-popover-em"><img id="unemimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/envelope.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/envelope-highres.png 2x"></div></div></div><div id="auto-hili-wrapper"><div id="auto-hili-popover-inner"><div id="auto-hili-popover-hili"><img id="autohilimg" src="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/white.png" srcset="chrome-extension://melcmjnpgnkkldeppmdllmmaecldbenh/img/white-highres.png 2x"></div><div id="auto-hili-text">Auto-Highlight</div></div></div><grammarly-btn><div class="_1BN1N Kzi1t MoE_1 _2DJZN" style="z-index: 2; transform: translate(1508.4px, 693.2px);"><div class="_1HjH7"><div title="Protected by Grammarly" class="_3qe6h">&nbsp;</div></div></div></grammarly-btn><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content"></iframe></div></div><grammarly-card><div></div></grammarly-card><script>(function(){(function(e){if(e){var t=e.cloneNode;e.cloneNode=function(n){var i=t.call(e,n);if(e.classList.contains("mceContentBody"))i.innerHTML=e.innerHTML,r(i);else try{o(i)}catch(e){}return i},o(e)}function n(e){if(e.parentNode)if(e.childNodes.length>1){for(var t=document.createDocumentFragment();e.childNodes.length>0;)t.appendChild(e.childNodes[0]);e.parentNode.replaceChild(t,e)}else e.firstChild?e.parentNode.replaceChild(e.firstChild,e):e.parentNode.removeChild(e)}function r(e){if(e)try{for(var t=e.querySelectorAll(".gr_"),r=t.length,o=0;o<r;o++)n(t[o])}catch(e){}}function o(e){try{Object.defineProperty(e,"innerHTML",{get:function(){try{var t=e.ownerDocument.createRange();t.selectNodeContents(e);var n=t.cloneContents(),o=document.createElement("div");return o.appendChild(n),r(o),o.innerHTML}catch(e){return""}},set:function(t){try{var n=e.ownerDocument.createRange();n.selectNodeContents(e),n.deleteContents();var r=n.createContextualFragment(t);e.appendChild(r)}catch(e){}}})}catch(e){}}})(document.querySelector("[data-gramm_id='f7424ebe-cabb-08d2-43d7-784163ec648c']")) })()</script></body></html>
